@@ -1,0 +1,71 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>portable</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2515" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.7.3" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.10" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Views\" />
+    <None Remove="Assets\" />
+    <None Remove="Assets\Paths\" />
+    <None Remove="Assets\Paths\menu.txt" />
+    <None Remove="Assets\Paths\close.txt" />
+    <None Remove="Assets\Images\EZAppMaker.png" />
+    <None Remove="Assets\Images\logo.png" />
+    <None Remove="Assets\Html\" />
+    <None Remove="Assets\Text\license.txt" />
+    <None Remove="Assets\Fonts\" />
+    <None Remove="Assets\Fonts\Courier_New.ttf" />
+    <None Remove="Assets\Images\bg_dark.png" />
+    <None Remove="Assets\Images\bg_light.png" />
+    <None Remove="sqlite-net-pcl" />
+    <None Remove="Microsoft.Data.Sqlite" />
+    <None Remove="Assets\XML\" />
+    <None Remove="Assets\XML\forms.xml" />
+    <None Remove="Assets\Database\" />
+    <None Remove="Assets\Database\sample.db-wal" />
+    <None Remove="Assets\Paths\form.txt" />
+    <None Remove="Assets\Paths\home.txt" />
+    <None Remove="Assets\Paths\license.txt" />
+    <None Remove="Assets\Database\sample.db" />
+    <None Remove=".DS_Store" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\" />
+    <Folder Include="Assets\" />
+    <Folder Include="Assets\Paths\" />
+    <Folder Include="Assets\Text\" />
+    <Folder Include="Assets\Fonts\" />
+    <Folder Include="Assets\XML\" />
+    <Folder Include="Assets\Database\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Paths\menu.txt" />
+    <EmbeddedResource Include="Assets\Paths\close.txt" />
+    <EmbeddedResource Include="Assets\Images\logo.png" />
+    <EmbeddedResource Include="Assets\Text\license.txt" />
+    <EmbeddedResource Include="Assets\Fonts\Courier_New.ttf" />
+    <EmbeddedResource Include="Assets\Images\bg_dark.png" />
+    <EmbeddedResource Include="Assets\Images\bg_light.png" />
+    <EmbeddedResource Include="Assets\XML\forms.xml" />
+    <EmbeddedResource Include="Assets\Paths\form.txt" />
+    <EmbeddedResource Include="Assets\Paths\home.txt" />
+    <EmbeddedResource Include="Assets\Paths\license.txt" />
+    <EmbeddedResource Include="Assets\Database\sample.db" />
+  </ItemGroup>
+  <Import Project="..\..\EZForms\EZForms.projitems" Label="Shared" Condition="Exists('..\..\EZForms\EZForms.projitems')" />
+  <Import Project="..\..\EZAppMaker\EZAppMaker\EZAppMaker.projitems" Label="Shared" Condition="Exists('..\..\EZAppMaker\EZAppMaker\EZAppMaker.projitems')" />
+</Project>

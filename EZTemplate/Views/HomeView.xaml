@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<component:EZContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:component="clr-namespace:EZAppMaker.Components"
+                         xmlns:resource="clr-namespace:EZAppMaker.Resources"
+                         xmlns:view="clr-namespace:EZTemplate.Views"
+                         x:Class="EZTemplate.Views.HomeView"
+                         x:DataType="view:HomeView"
+                         ItemId="HomeView"
+                         Title="Home">
+    <ContentView.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Image Source="{resource:ImageResource EZTemplate.Assets.Images.logo.png}" VerticalOptions="Center"/>
+        </Grid>        
+    </ContentView.Content>
+
+</component:EZContentView>

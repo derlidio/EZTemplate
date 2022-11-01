@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:component="clr-namespace:EZAppMaker.Components"
+             xmlns:resource="clr-namespace:EZAppMaker.Resources"
+             xmlns:view="clr-namespace:EZTemplate"
+             x:DataType="view:MainPage"
+             x:Class="EZTemplate.MainPage">
+
+    <ContentView.Content>
+
+        <Grid StyleClass="EZGridStyle">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+
+            <BoxView Color="{AppThemeBinding Dark=Black, Light=White}" Grid.Row="0" HeightRequest="32"/>
+            <BoxView Color="#FF404040" Grid.Row="0" HeightRequest="1" VerticalOptions="End"/>
+
+            <Label x:Name="PageTitle" FontFamily="OpenSans_Bold" TextColor="{AppThemeBinding Dark=#FFF0F0F0, Light=#FF202020}" Grid.Row="0" HorizontalOptions="Center" VerticalOptions="Center" />
+
+            <Grid StyleClass="EZGridStyle" Padding="10">
+                <component:EZPathButton PathData="{resource:PathResource EZTemplate.Assets.Paths.menu.txt}" OnTap="OnMenuTap" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <component:EZPathButton PathData="{resource:PathResource EZTemplate.Assets.Paths.close.txt}" OnTap="OnCloseTap" HorizontalOptions="End" VerticalOptions="Center"/>
+            </Grid>
+
+            <component:EZContainer x:Name="EZContainer" Grid.Row="1"/>
+
+            <BoxView Color="#FF404040" Grid.Row="2"/>
+
+        </Grid>
+
+    </ContentView.Content>
+
+</ContentView>

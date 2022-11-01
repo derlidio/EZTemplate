@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<component:EZContentView xmlns="http://xamarin.com/schemas/2014/forms"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:component="clr-namespace:EZAppMaker.Components"
+                         xmlns:resource="clr-namespace:EZAppMaker.Resources"
+                         xmlns:view="clr-namespace:EZTemplate.Views"
+                         x:DataType="view:LicenseView"
+                         x:Class="EZTemplate.Views.LicenseView"
+                         ItemId="LicenseView"
+                         Title="MIT License">
+
+    <ContentView.Content>
+        <StackLayout StyleClass="EZStackStyle" Padding="10">
+            <Label FontFamily="Courier" Text="{resource:TextResource EZTemplate.Assets.Text.license.txt}"/>
+        </StackLayout>
+    </ContentView.Content>
+
+</component:EZContentView>
