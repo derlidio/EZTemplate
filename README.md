@@ -1,14 +1,43 @@
 ﻿# EZTemplate
 A demo app for EZAppMaker + EZForms.
 
-*EZAppMaker* comprises a set of components which will show the same appearance and behavior on both,
-Android and iOS. This project aims to show the basics of working with the toolkit, which can come
-in handy if you'r app needs that feature.
+In order to run this app you'll have to clone [EZAppMaker](https://github.com/derlidio/EZAppMaker) and [EZForms](https://github.com/derlidio/EZForms).
 
-*EZForms* is a basic set of helper classes that integrates with EZAppMaker. It's aimed
-to work with SQLite and will take care of all your needs on the CRUD regard. You won't have
-to write a single SQL statement. You won't have to create models for your tables. Yow
-wont't have to bind to Entity Framework. Just plug your SQLite database and write a markup
+Your project's folder should look something like this:
+```
+C:\
+|
++----> [My Projects]
+       |
+       +----> [EZAppMaker]
+       |
+       |      +----> [EZAppMaker]
+       |      |
+       |      +----> [EZAppMaker.Android]
+       |      |
+       |      +----> [EZAppMaker.iOS]
+       |      |
+       |      +----> EZAppMaker.sln
+       |      |
+       |      +----> README.md
+       |
+       +----> [EZForms]
+       |
+       +----> [EZTemplate]
+              | 
+              +----> [EZTemplate]
+              |
+              +----> [EZTemplate.Android]
+              |
+              +----> [EZTemplate.iOS]
+```
+**EZAppMaker** comprises a set of components which shows the same appearance and behavior on both,
+Android and iOS. This project aims to show the basic concepts of the toolkit.
+
+**EZForms** is a set of helper classes that integrates with EZAppMaker. It's aimed
+to work with SQLite and will take care of all your CRUD needs. You won't have to write
+a single SQL statement. You won't have to create models for your tables. You wont't
+have to bind to Entity Framework. Just plug your SQLite database and write a markup
 file (XML) to tell EZForms what you want to see, how you want to see it, and that's it.
 
-EZForms is still under development, but it's current version can handle single-record forms pretty well.
+*EZForms is still under development, but it's current version can handle single-record forms pretty well.*
