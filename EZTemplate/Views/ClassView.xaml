@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ez:EZContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:ez="clr-namespace:EZAppMaker.Components;assembly=EZAppMaker"
+                  xmlns:view="clr-namespace:EZTemplate.Views"
+                  x:Class="EZTemplate.Views.ClassView"
+                  x:DataType="view:ClassView"
+                  Title="My Custom Form">
+    <ContentView.Content>
+
+        <!-- In order to bind an EZ component to a database column, set the
+             component's ItemId attribute to the name of that column. Note
+             that on our sample table the columns were named after the
+             components we are trying to show off. This is NOT a requirement. -->
+
+        <StackLayout StyleClass="EZStackStyle" Spacing="10">
+
+            <Grid ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <ez:EZEntry ItemId="id" Label="Id:" IsReadOnly="True"/>
+                <ez:EZEntry ItemId="entry" Label="My Entry:" IsRequired="True" Grid.Column="1"/>
+            </Grid>
+
+            <ez:EZCombo ItemId="combo" Label="Full Combo:" IsRequired="True"/>
+
+            <Grid ColumnSpacing="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.35*"/>
+                    <ColumnDefinition Width="0.65*"/>
+                </Grid.ColumnDefinitions>
+                <ez:EZEntry ItemId="date" Label="Date:" Mask="9999/99/99" Placeholder="YYYY/MM/DD"/>
+                <ez:EZSlider ItemId="slider" Label="Slider:" Min="0" Max="100" Grid.Column="1"/>
+            </Grid>
+
+            <!-- Note that radio buttons do not need to be created individually. Instead, use
+                 the EZRadioGroup tag. Individual items will be created based on the list you
+                 specify for the group. -->
+
+            <ez:EZRadioGroup Orientation="Horizontal" ItemId="radio" Spacing="20"/>
+
+            <ez:EZRating ItemId="rating"/>
+            <ez:EZSignature ItemId="signature" IsRequired="True" HeightRequest="80"/>
+            <ez:EZPhoto ItemId="photo"/>
+            <ez:EZColorPicker ItemId="color"/>
+            <ez:EZCheckBox ItemId="checkbox" Label="Check Me!"/>
+
+            <!-- Don't forget to place an EZExpander at the end of the page, so the
+                 soft-keyboard can be accomodated when the user is typing text on
+                 an EZEntry or EZCombo. -->
+
+            <ez:EZExpander/>
+
+        </StackLayout>
+        
+    </ContentView.Content>
+
+</ez:EZContentView>
+

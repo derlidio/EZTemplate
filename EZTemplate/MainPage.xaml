@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ez:EZContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:ez="clr-namespace:EZAppMaker.Components;assembly=EZAppMaker"
+                  xmlns:resource="clr-namespace:EZAppMaker.Resources;assembly=EZAppMaker"
+                  xmlns:view="clr-namespace:EZTemplate"
+                  x:DataType="view:MainPage"
+                  x:Class="EZTemplate.MainPage"
+                  ItemId="MainPage"
+                  Title="Main Page">
+
+    <ContentView.Content>
+
+        <Grid StyleClass="EZGridStyle">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="48"/>
+                <RowDefinition/>
+                <RowDefinition Height="1"/>
+            </Grid.RowDefinitions>
+
+            <BoxView Color="{AppThemeBinding Dark=Black, Light=White}" Grid.Row="0" HeightRequest="32"/>
+            <BoxView Color="#FF404040" Grid.Row="0" HeightRequest="1" VerticalOptions="End"/>
+
+            <Grid StyleClass="EZGridStyle" Padding="10">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="32"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="32"/>
+                </Grid.ColumnDefinitions>
+
+                <ez:EZPathButton PathData="{resource:PathResource EZTemplate.Assets.Paths.menu.txt}" OnTap="OnMenuTap" Grid.Column="0"/>
+
+                <Label x:Name="PageTitle"
+                       FontFamily="OpenSansBold"
+                       TextColor="{AppThemeBinding Dark=#FFF0F0F0, Light=#FF202020}"
+                       Grid.Column="1"
+                       HorizontalTextAlignment="Center"
+                       VerticalOptions="Center"/>
+
+                <ez:EZPathButton PathData="{resource:PathResource EZTemplate.Assets.Paths.close.txt}" OnTap="OnCloseTap" Grid.Column="2"/>
+
+            </Grid>
+
+            <ez:EZContainer x:Name="EZContainer" Grid.Row="1"/>
+
+            <BoxView Color="#FF404040" Grid.Row="2"/>
+
+        </Grid>
+
+    </ContentView.Content>
+
+</ez:EZContentView>

@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ez:EZContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:ez="clr-namespace:EZAppMaker.Components;assembly=EZAppMaker"
+                  xmlns:view="clr-namespace:EZTemplate.Views"
+                  x:Class="EZTemplate.Views.ComponentsView"
+                  x:DataType="view:ComponentsView"
+                  ItemId="ComponentsView"
+                  Title="Components Sample">
+
+    <ContentView.Resources>
+        <Style TargetType="ez:EZButton">
+            <Setter Property="WidthRequest" Value="90"/>
+        </Style>
+    </ContentView.Resources>
+
+    <ContentView.Content>
+
+        <VerticalStackLayout Padding="10" Spacing="10">
+
+            <ez:EZTag Label="Entry Options"/>
+
+            <ez:EZEntry Label="Regular:" Placeholder="(type here)"/>
+            <ez:EZEntry Label="Password:" IsPassword="True" MaxLength="15" />
+            <ez:EZEntry Label="Masked:" Mask="9999/99/99" Placeholder="YYYY/MM/DD" Keyboard="Numeric"/>
+
+            <ez:EZCombo Label="Combo:"
+                        Placeholder="Type to search the list..."
+                        ItemsSource="{Binding Fruits}"
+                        Key="Id"
+                        Item="Name"
+                        Detail="Description"/>
+
+            <ez:EZTag Label="Buttons"/>
+
+            <HorizontalStackLayout Spacing="10">
+                <ez:EZButton Type="danger" Label="Danger"/>
+                <ez:EZButton Type="dark" Label="Dark"/>
+                <ez:EZButton Type="info" Label="Info"/>
+            </HorizontalStackLayout>
+            
+            <HorizontalStackLayout Spacing="10">
+                <ez:EZButton Type="light" Label="Light"/>
+                <ez:EZButton Type="link" Label="Link"/>
+                <ez:EZButton Type="primary" Label="Primary"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Spacing="10">
+                <ez:EZButton Type="secondary" Label="Secondary"/>
+                <ez:EZButton Type="success" Label="Success"/>
+                <ez:EZButton Type="warning" Label="Warning"/>
+            </HorizontalStackLayout>
+
+            <ez:EZTag Label="Check Boxes"/>
+
+            <ez:EZCheckBox Label="You may whant to check this."/>
+            <ez:EZCheckBox Label="Maybe this other one."/>
+
+            <ez:EZTag Label="Radio Buttons"/>
+
+            <ez:EZRadioGroup Spacing="10">
+                <ez:EZRadioButton Label="First option"/>
+                <ez:EZRadioButton Label="Second option"/>
+                <ez:EZRadioButton Label="Third option"/>
+            </ez:EZRadioGroup>                
+
+            <ez:EZTag Label="Sliders"/>
+
+            <ez:EZSlider Label="Regular:" Min="0" Max="100"/>
+            <ez:EZSlider Label="Inverted" Min="100" Max="0"/>
+            <ez:EZColorPicker Label="Pick a color:"/>
+
+            <ez:EZTag Label="Special"/>
+            <ez:EZSignature Label="Sign here:" HeightRequest="128"/>
+            <ez:EZPhoto Label="Take a picture:"/>
+            <ez:EZRating Label="Rate these components:"/>
+
+            <ez:EZExpander/>
+
+        </VerticalStackLayout>
+
+    </ContentView.Content>
+
+</ez:EZContentView>

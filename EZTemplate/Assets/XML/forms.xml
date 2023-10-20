@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<EZMarkup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!-- Basic EZForm -->
+
+    <Forms>
+
+        <!-- Name is used to identify this form within the app. Source is used to tell
+             what table from the SQLite Database is the target of this form. Label is
+             the Title of this form (it will be used to set the Title property of the
+             corresponding <EZContentView> which will be automatically created for you. -->
+
+        <Form Name="frm_sample" Source="sample" Label="Sample CRUD" Order="id">
+
+            <!-- The following section will define what fields from the corresponding
+                 table you want to be part of your form. In this example, all fields
+                 for the "sample" table are being mapped. This is not required. You
+                 may use just a subset of the table columns. The rest of them will
+                 remain untouched. -->
+
+            <Fields>
+
+                <!-- A field has a set of properties which will vary according to
+                     it's input type. When you "Detach" a field (by setting Detached
+                     to "true", the engine will not try to update it. It's quite useful
+                     for AUTOINCREMENT columns, which you may want to display, but not
+                     let the user to change it. -->
+
+                <Field Source="id" Detached="true" ReadOnly="true" Label="ID:" Placeholder="(auto)"/>
+
+                <!-- * The Source attribute must be the name of the table's column you want to bind to the corresponding
+                       field. I've named the columns of the sample table after the input type I wanted to demonstrate.
+                       This is NOT required at all. You may name your columns as you wish (of course, respecting SQLite rules).
+                     * The Input attribute defines the type of component which will be used to interact with the user.
+                     * The Label attribute defines the text to appear besides the input area (not all components support labels).
+                     * If you want to make a column 'Searchable' (like an index for the form), set this attribute to "true".
+                     * The boolean true is case insensitive, so "True", "true", and "TRUE" are the same. You may also
+                       use "Yes", "Y" or "y" for true, and "No", "N" or "n" for false. -->
+
+                <Field Source="entry" Input="entry" Label="Entry Sample:" Required="true" Searchable="true"/>
+                <Field Source="combo" Input="combo" Label="Full Combo Sample:" List="lst_fruits"/>
+                <Field Source="date" Input="entry" Label="Masked Field:" Mask="9999/99/99" Placeholder="YYYY/MM/DD"/>
+                <Field Source="color" Input="color" Label="Color Selector:"/>
+                <Field Source="rating" Input="rating" Label="How many stars?"/>
+                <Field Source="slider" Input="slider" Label="Slide This:" Min="0" Max="100"/>
+                <Field Source="radio" Input="radio" Label="Select an Animal:" List="lst_animals"/>
+                <Field Source="signature" Input="signature" Label="Sign Here:" Height="80"/>
+                <Field Source="checkbox" Input="check" Label="You may want to check this!"/>
+                <Field Source="photo" Input="photo" Label="Take a Picture:"/>
+
+            </Fields>
+
+        </Form>
+
+        <!-- If the basic layout of an EZForm doesn't fit your needs, you can still
+             use it. Create your own EZContentView and bind it to a form. Note that
+             you don't need to specify many of the field's attributes, since they
+             will be set on the EZContentView you've created (directly on each
+             component). You just have to match ItemId (there) and the corresponding
+             Source attribute (here). -->
+
+        <Form Name="frm_class" Source="sample" Label="Class Binding" Class="ClassView">
+            <Fields>
+
+                <Field Source="id" Detached="true"/>
+                <Field Source="entry" Required="true" Searchable="true"/>
+                <Field Source="combo" List="lst_fruits"/>
+                <Field Source="date"/>
+                <Field Source="color"/>
+                <Field Source="rating"/>
+                <Field Source="slider"/>
+                <Field Source="radio" List="lst_animals" />
+                <Field Source="signature"/>
+                <Field Source="checkbox"/>
+                <Field Source="photo"/>
+
+            </Fields>
+        </Form>
+
+    </Forms>
+
+    <!-- Combos and Radio Groups may be linked to lists. A list is a table or view in your SQLite database
+         containing the values for the user to choose from. The Key attribute defines what will be saved
+         on the corresponding column (that wich referenced the list). The Item attribute defines the text
+         that the user will see. Combos may also have a Detail and can be grouped by a column (set at the
+         Group attribute) -->
+         
+    <Lists>
+        <List Name="lst_fruits" Source="combo_list" Key="id" Item="description" Detail="detail" Group="group"/>
+        <List Name="lst_animals" Source = "radio_list" Key="id" Item="description"/>
+    </Lists>
+
+    <!-- A basic EZContentView binded to a form should look like this:
+
+         <ContentView.Content>
+            <StackLayout Spacing="10">
+                <ez:EZEntry ItemId="database_column_name" .../>
+                ...
+                <ez:EZExpander/>
+            </StackLayout>
+         </ContentView.Content>
+
+         IMPORTANT: if your page is long in lenght (if it demands scrolling), then you
+         must not forget to add an <EZExpander> to the end of it's layout. This tag is
+         used by EZContainer to add space on the page in order to accomodate the
+         soft-keyboard. Without it, the soft-keyboard may cover input fields and
+         the users will not be able to see what thei'r typing.
+
+         Once you have your class, just add another <Form> tho this file, like this:
+
+         <Form Name="frm_class" Source="table_name" Label="My Form's Name" Class="My_EZContentView_Name">
+            <Fields>
+                ...
+                ...
+            </Fields>
+         </Form>
+
+         Well... that's it for now :o) -->
+
+</EZMarkup>

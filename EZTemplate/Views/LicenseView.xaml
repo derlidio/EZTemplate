@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ez:EZContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                         xmlns:ez="clr-namespace:EZAppMaker.Components;assembly=EZAppMaker"
+                         xmlns:resource="clr-namespace:EZAppMaker.Resources;assembly=EZAppMaker"
+                         xmlns:view="clr-namespace:EZTemplate.Views"
+                         x:DataType="view:LicenseView"
+                         x:Class="EZTemplate.Views.LicenseView"
+                         ItemId="LicenseView"
+                         Title="MIT License">
+
+    <ContentView.Content>
+        <VerticalStackLayout StyleClass="EZVerticalStackStyle" Padding="10">
+            <Label FontFamily="CourierNew" Text="{resource:TextResource EZTemplate.Assets.Text.license.txt}"/>
+        </VerticalStackLayout>
+    </ContentView.Content>
+
+</ez:EZContentView>
