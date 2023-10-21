@@ -38,7 +38,7 @@ namespace EZTemplate
 
             EZSettings.AppName = "EZAppMaker Demo";
             EZSettings.SmoothTransitions = false;
-            EZSettings.HomeView = "HomeView";
+            EZSettings.StartView = "HomeView";
 
             // If you intend to use EZForms throughout your application, you
             // may want to load your forms' definitions here. If your app doesn't
