@@ -38,6 +38,7 @@ namespace EZTemplate
 
             EZSettings.AppName = "EZAppMaker Demo";
             EZSettings.SmoothTransitions = false;
+            EZSettings.HomeView = "HomeView";
 
             // If you intend to use EZForms throughout your application, you
             // may want to load your forms' definitions here. If your app doesn't
@@ -53,6 +54,13 @@ namespace EZTemplate
             {
                 EZEmbedded.DumpToAppFolder("EZTemplate.Assets.Database.sample.db", "sample.db");
             }
+        }
+
+        public override void Ready()
+        {
+            // All EZAppMaker elements will be in place and properly
+            // initialized when this method is called. Here you can
+            // safely start your app activities.
         }
 
         public override EZContentView BuildMainPage()
