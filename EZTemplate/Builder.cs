@@ -236,5 +236,22 @@ namespace EZTemplate
 
             main.SetTitle("");
         }
+
+        public override bool BackButtonPressed()
+        {
+            if (EZApp.Container.IsMenuVisible)
+            {
+                EZApp.Container.HideMenu();
+                return true;
+            }
+
+            if (EZApp.Container.StackCount > 1)
+            {
+                _ = EZApp.Container.PopContentView();
+                return true;
+            }
+
+            return false;
+        }
     }
 }
