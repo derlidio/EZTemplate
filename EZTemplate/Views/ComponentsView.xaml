@@ -18,6 +18,10 @@
 
         <VerticalStackLayout Padding="10" Spacing="10">
 
+            <ez:EZFrame Label="This is a Frame">
+                <Label Text="This is the frame content!"/>
+            </ez:EZFrame>
+
             <ez:EZTag Label="Entry Options"/>
 
             <ez:EZEntry Label="Regular:" Placeholder="(type here)"/>
