@@ -39,7 +39,7 @@
 
                 <Field Source="entry" Input="entry" Label="Entry Sample:" Required="true" Searchable="true"/>
                 <Field Source="combo" Input="combo" Label="Full Combo Sample:" List="lst_fruits"/>
-                <Field Source="date" Input="entry" Label="Masked Field:" Mask="9999/99/99" Placeholder="YYYY/MM/DD"/>
+                <Field Source="date" Input="entry" Label="Masked Field:" Mask="9999/99/99" Placeholder="YYYY/MM/DD" Keyboard="Numeric"/>
                 <Field Source="color" Input="color" Label="Color Selector:"/>
                 <Field Source="rating" Input="rating" Label="How many stars?"/>
                 <Field Source="slider" Input="slider" Label="Slide This:" Min="0" Max="100"/>
