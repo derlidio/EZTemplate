@@ -14,12 +14,13 @@ public static class MauiProgram
 
 		builder
 		.UseMauiApp<App>()
-        .ConfigureMauiHandlers(handlers =>
-        {
-#if ANDROID
-            handlers.AddHandler(typeof(EZScrollBridge), typeof(EZScrollViewHandler));
-#endif
-        })
+        .ConfigureMauiHandlers
+        (
+            handlers =>
+            {
+                handlers.AddHandler(typeof(EZScrollBridge), typeof(EZScrollViewHandler));
+            }
+        )
         .ConfigureEffects
         (
             effects =>
