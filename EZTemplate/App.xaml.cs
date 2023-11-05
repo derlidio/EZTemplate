@@ -13,7 +13,6 @@ public partial class App : Application
 
         EntryHandler.Mapper.AppendToMapping("EZEntryBridge", EZHandlers.EZEntryHandler); /* FEATURE */
         ScrollViewHandler.Mapper.AppendToMapping("EZScrollBridge", EZHandlers.EZScrollTouchHandler); /* FEATURE */
-        ScrollViewHandler.Mapper.AppendToMapping("ContentSize", EZHandlers.EZScrollContentSizeHandler); /* WORKAROUND */
 
         EZApp.Initialize(new Builder());
 
