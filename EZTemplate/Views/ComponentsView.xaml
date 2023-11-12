@@ -6,8 +6,11 @@
                   x:Class="EZTemplate.Views.ComponentsView"
                   x:DataType="view:ComponentsView"
                   ItemId="ComponentsView"
-                  Title="Components Sample">
-
+                  Title="Components Sample"
+                  ShowSpinner="True"> <!-- You may opt to show a spinner when loading a heavy
+                                           view, like this one. It will be shown once, on the
+                                           first appearance of the view, i.e. when the view is
+                                           being constructed to be pushed to the stack. -->
     <ContentView.Resources>
         <Style TargetType="ez:EZButton">
             <Setter Property="WidthRequest" Value="90"/>
