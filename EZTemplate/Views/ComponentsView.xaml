@@ -36,7 +36,9 @@
                         ItemsSource="{Binding Fruits}"
                         Key="Id"
                         Item="Name"
-                        Detail="Description"/>
+                        Group="Type"
+                        Detail="Description"
+                        Sorted="True"/>
 
             <ez:EZTag Label="Buttons"/>
 
@@ -82,7 +84,7 @@
             <ez:EZPhoto Label="Take a picture:"/>
             <ez:EZRating Label="Rate these components:"/>
 
-            <ez:EZExpander/>
+            <ez:EZExpander BackgroundColor="Blue"/>
 
         </VerticalStackLayout>
 
