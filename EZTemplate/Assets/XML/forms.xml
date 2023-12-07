@@ -93,11 +93,11 @@
     <!-- A basic EZContentView binded to a form should look like this:
 
          <ContentView.Content>
-            <StackLayout Spacing="10">
+            <VerticalStackLayout Spacing="10">
                 <ez:EZEntry ItemId="database_column_name" .../>
                 ...
                 <ez:EZExpander/>
-            </StackLayout>
+            </VerticalStackLayout>
          </ContentView.Content>
 
          IMPORTANT: if your page is long in lenght (if it demands scrolling), then you
